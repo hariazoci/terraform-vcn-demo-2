@@ -11,6 +11,12 @@ output "subnet_id" {
   value       = oci_core_subnet.subnet.id
 }
 
+
+output "bad_password_output" {
+  value = "MyPasswordIsSoWeak!123"
+}
+
+
 /*
 output "instance_public_ip" {
   description = "Public IP address of the instance"
