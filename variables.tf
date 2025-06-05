@@ -64,6 +64,23 @@ variable "fake_api_key" {
   default     = "aefasdfadsfasdf98q0er9laidsyfewqroqoeqruer"
 }
 
+variable "aws_access_key" {
+  description = "A dummy AWS access key for testing truffleHog."
+  type        = string
+  default     = "AKIAIOSFODNN7EXAMPLEKEY" // This is a highly recognizable pattern
+}
+
+variable "github_token" {
+  description = "A dummy GitHub token for testing truffleHog."
+  type        = string
+  default     = "ghp_abcdefghijklmnopqrstuvwxyz1234567890ABCDEF"
+}
+
+variable "generic_password" {
+  description = "A dummy password for testing truffleHog."
+  type        = string
+  default     = "ThisIsMySecretPassword123!"
+}
 
 
 
