@@ -41,16 +41,47 @@ resource "oci_core_security_list" "sl" {
   display_name   = "${var.label_prefix}-sl"
 
   ingress_security_rules {
-    protocol  = "6"
-    source    = "0.0.0.0/0" # Replace with the required IP
+    protocol  = "6"          // TCP
+    source    = "0.0.0.0/0"  // Critical: Open to the internet
     stateless = true
 
     tcp_options {
-      min = 22
+      min = 22 // Critical: SSH Port
       max = 22
     }
   }
 
+  ingress_security_rules {
+    protocol  = "6"          // TCP
+    source    = "0.0.0.0/0"  // Critical: Open to the internet
+    stateless = true
+
+    tcp_options {
+      min = 3389 // Critical: RDP Port
+      max = 3389
+    }
+  }
+
+  // tfsec also looks for HTTP/HTTPS open to the internet
+  ingress_security_rules {
+    protocol  = "6"
+    source    = "0.0.0.0/0"
+    stateless = true
+    tcp_options {
+      min = 80
+      max = 80
+    }
+  }
+
+  ingress_security_rules {
+    protocol  = "6"
+    source    = "0.0.0.0/0"
+    stateless = true
+    tcp_options {
+      min = 443
+      max = 443
+    }
+  }
 
   egress_security_rules {
     protocol    = "all"
