@@ -90,13 +90,6 @@ resource "oci_core_security_list" "sl" {
   }
 }
 
-resource "oci_core_volume" "unencrypted_volume" {
-  compartment_id      = var.compartment_ocid
-  availability_domain = var.availability_domain
-  display_name        = "block-volume-${var.label_prefix}"
-  size_in_gbs        = 50
-}
-
 
 /*
 resource "oci_core_subnet" "dev-subnet-2" {
