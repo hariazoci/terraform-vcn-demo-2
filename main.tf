@@ -43,7 +43,7 @@ resource "oci_core_security_list" "sl" {
   ingress_security_rules {
     protocol  = "6"
     source    = "10.0.0.0/24" # Replace with the required IP
-    stateless = false
+    stateless = true
 
     tcp_options {
       min = 22
