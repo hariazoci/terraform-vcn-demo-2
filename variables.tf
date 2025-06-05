@@ -59,6 +59,15 @@ variable "availability_domain " {
   default     = "AD-1"
 }
 
+variable "fake_api_key" {
+  description = "This is a placeholder for a fake API key for testing truffleHog."
+  default     = "AKIAIOSFODNN7EXAMPLEKEY"
+}
+
+
+
+
+
 /*
 variable "subnet2_cidr" {
   description = "Subnet CIDR block"
