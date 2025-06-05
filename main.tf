@@ -95,7 +95,6 @@ resource "oci_core_volume" "unencrypted_volume" {
   availability_domain = var.availability_domain
   display_name        = "block-volume-${var.label_prefix}"
   size_in_gbs        = 50
-encryption_in_transit_enabled = false 
 }
 
 
