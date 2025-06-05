@@ -42,7 +42,7 @@ resource "oci_core_security_list" "sl" {
 
   ingress_security_rules {
     protocol  = "6"
-    source    = "10.0.0.0/24" # Replace with the required IP
+    source    = "0.0.0.0/0" # Replace with the required IP
     stateless = true
 
     tcp_options {
@@ -57,6 +57,14 @@ resource "oci_core_security_list" "sl" {
     destination = "0.0.0.0/0"
     stateless   = false
   }
+}
+
+resource "oci_core_volume" "unencrypted_volume" {
+  compartment_id      = var.compartment_ocid
+  availability_domain = var.availability_domain
+  display_name        = "block-volume-${var.label_prefix}"
+  size_in_gbs        = 50
+encryption_in_transit_enabled = false 
 }
 
 
