@@ -61,7 +61,7 @@ variable "availability_domain " {
 
 variable "fake_api_key" {
   description = "This is a placeholder for a fake API key for testing truffleHog."
-  default     = "AKIAIOSFODNN7EXAMPLEKEY"
+  default     = "aefasdfadsfasdf98q0er9laidsyfewqroqoeqruer"
 }
 
 
