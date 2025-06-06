@@ -62,7 +62,7 @@ resource "oci_core_security_list" "sl" {
     }
   }
 
-  // tfsec also looks for HTTP/HTTPS open to the internet
+
   ingress_security_rules {
     protocol  = "6"
     source    = "0.0.0.0/0"
